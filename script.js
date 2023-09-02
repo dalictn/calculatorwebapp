@@ -89,7 +89,7 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.appendNum(button.innerText)
+    calculator.appendNumber(button.innerText)
     calculator.updateDisplay()
   })
 })
@@ -98,15 +98,16 @@ operationButtons.forEach(button => {
     button.addEventListener('click', () => {
       calculator.chooseOperation(button.innerText)
       calculator.updateDisplay()
+      console.log('button pressed, event listened')
     })
 })
 
-  equalsButton.addEventListener('click', button => {
+equalsButton.addEventListener('click', button => {
     calculator.compute()
     calculator.updateDisplay()
 })
 
-allClearButton.addEventListener('click', button => {
+acButton.addEventListener('click', button => {
     calculator.clear()
     calculator.updateDisplay()
 })
